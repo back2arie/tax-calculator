@@ -4,13 +4,13 @@ from config.config import Config
 logger = logging.getLogger(__name__)
 
 
-class ResponseSuccess(object):
+class ResponseSuccess():
 
     def __init__(self, value=None, type=Config.SUCCESS):
         self.value = value
         self.type = type
 
-class CommonResponse(object):
+class CommonResponse():
 
     def __init__(self, message, type):
         self.message = self._format_message(message)

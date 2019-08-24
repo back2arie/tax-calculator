@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-class Validator(object):
+class Validator():
     __metaclass__ = ABCMeta
 
     @abstractmethod
@@ -11,6 +11,3 @@ class Validator(object):
 
     @abstractmethod
     def get_valid_data(self): pass
-
-    @abstractmethod
-    def get_default_param(self): pass

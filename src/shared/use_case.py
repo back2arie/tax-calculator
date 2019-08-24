@@ -3,7 +3,7 @@ from config.config import Config
 from src.shared import response_object
 
 
-class UseCase(object):
+class UseCase():
     __metaclass__ = ABCMeta
 
     def execute(self, request_object):

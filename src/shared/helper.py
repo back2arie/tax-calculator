@@ -1,24 +1,46 @@
-from datetime import datetime
-from collections import namedtuple
+from config.config import Config
 
-def get_now_timestamp():
-    return datetime.now()
+def calculate_tax(price, code):
+    """
+    Calculate tax based on tax code.
 
-def get_value_from_dict(adict, key, default):
+    Attributes:
+        price: Tax object price.
+        code: Tax code.
 
-    return adict.get(key, default)
+    If tax code is 1 (food), tax is 10% of price
+    If tax code is 2 (tobacco), tax is 10 + (2% of price)
+    If tax code is 3 (entertainment), tax is:
+        free if 0 < Price < 100,
+        if price >= 100, then tax is 1% of (price - 100)
+    """
 
-def build_next_url(url, cur_page, next_page):
-    if not next_page:
-        next_page = cur_page
-    return url.replace("page={}".format(cur_page), "page={}".format(next_page))
+    if code == 1:
+        return 0.1*price
+    elif code == 2:
+        return 10 + (0.02*price)
+    elif code == 3:
+        if price < 100:
+            return 0
+        elif price >= 100:
+            return 0.01*(price - 100)
 
+def calculate_amount(price, tax):
+    """
+    Calculate amount for specific tax object.
 
-def build_prev_url(url, cur_page, prev_page):
-    if not prev_page:
-        prev_page = cur_page
-    return url.replace("page={}".format(cur_page), "page={}".format(prev_page))
+    Attributes:
+        price: Tax object price.
+        tax: Tax to be paid.
+    """
+    return price + tax
 
-def dict_to_obj(adict):
+def is_refundable(code):
+    """
+    Check if Tax Code is refundable or not.
 
-    return namedtuple('Struct', adict.keys())(*adict.values())
+    Attributes:
+        code: Tax code.
+    """
+
+    return Config.TAX_CODE_IS_REFUNDABLE[code] if Config.TAX_CODE_IS_REFUNDABLE[code] else ''

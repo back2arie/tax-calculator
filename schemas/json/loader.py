@@ -1,6 +1,6 @@
 import os, glob, json
 
-class JSONSchemaLoader(object):
+class JSONSchemaLoader():
     __json_schemas = {}
 
     def __init__(self):

@@ -3,9 +3,6 @@ from abc import ABC, abstractmethod
 class Request(ABC, object):
 
     @abstractmethod
-    def form_to_dict(): pass
-
-    @abstractmethod
     def json_to_dict(): pass
 
     @abstractmethod

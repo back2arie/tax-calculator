@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "6ac5a55a-7741-4f04-8c2b-4781b41ebb71",
+		"_postman_id": "66f53f46-f05a-41fd-8fdd-f47a506a97e0",
 		"name": "Tax Calculator",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -30,7 +30,8 @@
 						"v1",
 						"tax"
 					]
-				}
+				},
+				"description": "As user I want to create my tax object"
 			},
 			"response": []
 		},

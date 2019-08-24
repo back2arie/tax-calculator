@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-class TaxCodeRepository(object):
+class TaxCodeRepository():
     __metaclass__ = ABCMeta
 
     @abstractmethod

@@ -1,6 +1,4 @@
-import collections
-
-class InvalidRequestObject(object):
+class InvalidRequestObject():
 
     def __init__(self):
         self.errors = []
@@ -24,7 +22,7 @@ class InvalidRequestObject(object):
     __bool__ = __nonzero__
 
 
-class ValidRequestObject(object):
+class ValidRequestObject():
 
     @classmethod
     def from_dict(cls, adict):

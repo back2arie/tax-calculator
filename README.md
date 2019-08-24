@@ -1,6 +1,9 @@
 # tax-calculator
 Tax Calculator written in Python using Clean Architecture 
 
+## API Documentation
+API Documentation is available [here](https://documenter.getpostman.com/view/2188496/SVfMSpmw?version=latest), you  can also import from postman collection available on `/schemas/postman/` directory.
+
 ## Requirements
 - Python version 3.6+
 - pip (package manager for Python), included since Python 3.4.
@@ -60,10 +63,4 @@ make coverage
 ## Lint
 ```
 make lint
-```
-
-## Module Generator
-If you working on new module and too lazy to create the structure one by one, you can use generator:
-```
-python3 gawekno.py sales v1
 ```

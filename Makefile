@@ -6,7 +6,7 @@ run:
 	python manage.py
 	
 clean:
-	find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
+	find . | grep -E "(__pycache__|\.pyc|\.pyo)" | xargs rm -rf
 
 test:
 	pytest tests/ -v

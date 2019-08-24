@@ -9,11 +9,9 @@ from src.tax.v1.delivery.http_sanic import bp_tax
 
 logger = logging.getLogger(__name__)
 
-
 def config_log(app):
     # set log config from config
     logging.config.dictConfig(Config.LOGGING)
-
 
 def connect_db():
     # postgres use pgsql
@@ -36,5 +34,5 @@ def create_app(config):
     app.config.from_object(config)
     app.blueprint(bp_tax)
     CORS(app, automatic_options=True)
-    
+
     return app

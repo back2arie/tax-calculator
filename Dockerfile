@@ -10,8 +10,8 @@ RUN pip install -r requirements/dev.txt
 
 RUN apt-get update && apt-get install -y supervisor
 
-RUN cp env.example .env
+RUN cp .env.sample .env
 
-EXPOSE 8000
+EXPOSE 8001
 
 CMD []

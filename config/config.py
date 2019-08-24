@@ -3,7 +3,7 @@ import os
 from decouple import config
 
 
-class Config(object):
+class Config():
     """
     Base configuration
     """
@@ -12,7 +12,6 @@ class Config(object):
     PORT = config('PORT')
     APP_DIR = os.path.abspath(os.path.dirname(__file__))  # This directory
     PROJECT_ROOT = os.path.abspath(os.path.join(APP_DIR, os.pardir))
-    RUN_MULTIPLE_PROCESS = config('RUN_MULTIPLE_PROCESS') == 'True'
 
     DB_TYPE = config('DB_TYPE')
     DB_HOST = config('DB_HOST')
@@ -96,10 +95,16 @@ class Config(object):
     }
 
     TAX_CODE = [
-      (1, "Food & Beverage"),
-      (2, "Tobacco"),
-      (3, "Entertainment"),
+        (1, "Food & Beverage"),
+        (2, "Tobacco"),
+        (3, "Entertainment"),
     ]
+
+    TAX_CODE_IS_REFUNDABLE = {
+        1:  'Yes',
+        2:  'No',
+        3:  'No'
+    }
 
     LOGGING = {
         'version': 1,
