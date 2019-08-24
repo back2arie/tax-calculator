@@ -32,7 +32,7 @@ python3 -m pip install -r requirements.txt
 
 Environment variables:
 ```
-cp env.example .env
+cp .env.sample .env
 ```
 
 ## Database Schema
