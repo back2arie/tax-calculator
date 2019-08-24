@@ -1,0 +1,39 @@
+version: "3.1"
+
+networks:
+  app-tier-tax:
+    driver: bridge
+
+services:
+    # api:
+    #   container_name: tax-api
+    #   build: 
+    #     context: .
+    #     dockerfile: Dockerfile
+    #   ports:
+    #       - "8001:8001"
+    #   working_dir: /usr/app
+    #   volumes:
+    #       - .:/usr/app
+    #   networks:
+    #     - app-tier-tax
+    #   command: python manage.py
+
+    postgres:
+      container_name: tax-db
+      working_dir: /usr/app
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+      image: postgres:9.6-alpine
+      environment:
+        POSTGRES_USER: tax
+        POSTGRES_PASSWORD: admin
+        POSTGRES_DB : tax
+        security_opt:
+      networks:
+        - app-tier-tax
+      ports:
+        - "5432:5432"
+    
+volumes:
+  postgres_data:

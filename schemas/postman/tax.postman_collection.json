@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "6ac5a55a-7741-4f04-8c2b-4781b41ebb71",
+		"name": "Tax Calculator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Tax",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Big Mac\",\n\t\"taxCode\": 1,\n\t\"price\": 1000\n}"
+				},
+				"url": {
+					"raw": "{{url}}/v1/tax",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"tax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bill",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/v1/tax",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"tax"
+					]
+				},
+				"description": "As user I want to see my bill"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a5b875ae-2ab4-45c2-af1b-69144e6652d0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "de7ec637-cf2d-495a-b56b-0cb51483447c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

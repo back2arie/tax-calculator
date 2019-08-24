@@ -1,0 +1,40 @@
+[
+  {
+    "id": "tax_schema_create_params",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "schema create new tax",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "minimum": 1
+        },
+        "taxCode": {
+          "type": "integer"
+        },
+        "price": {
+          "type": "integer"
+        }
+    },
+    "required": ["name", "taxCode", "price"]
+  },
+  {
+    "id": "tax_schema_get_all_params",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "schema get all tax",
+    "type": "object",
+    "properties": {
+        "page": {
+            "type": ["string", "null"],
+            "default": "1",
+            "pattern": "^[0-9]+$"
+        },
+        "limit": {
+            "type": ["string", "null"],
+            "default": "10",
+            "pattern": "^[0-9]+$"
+        }
+    },
+    "required": ["limit", "page"]
+  }
+]

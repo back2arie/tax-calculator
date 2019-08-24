@@ -1,0 +1,7 @@
+# The pytest framework makes it easy to write small tests, yet scales to support complex functional testing for applications and libraries.
+# https://docs.pytest.org/en/latest/
+pytest==4.0.2
+
+# Pytest plugin for measuring coverage.
+# https://github.com/pytest-dev/pytest-cov
+pytest-cov==2.6.0
