@@ -1,5 +1,5 @@
 # tax-calculator
-Tax Calculator written in Python using Clean Architecture
+Tax Calculator written in Python using Clean Architecture 
 
 ## API Documentation
 API Documentation is available [here](https://documenter.getpostman.com/view/2188496/SVfMSpmw?version=latest), you  can also import from postman collection available on `/schemas/postman/` directory.
